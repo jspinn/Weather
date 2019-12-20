@@ -1,0 +1,72 @@
+<WeatherView>:
+    timeLabel: timeLabel
+    dateLabel: dateLabel
+    currentLabel: currentLabel
+    tempLabel: tempLabel
+    phraseLabel: phraseLabel
+    todayButton: todayButton
+    tonightButton: tonightButton
+
+    canvas.before:
+        Color:
+            rgba: 0.5, 0.7, 0.9, 1
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+    cols: 1
+    rows: 4
+
+    BoxLayout:
+        size_hint: .25, .25
+        Button:
+            id: todayButton
+            text: 'Today'
+        Button:
+            id: tonightButton
+            text: 'Tonight'
+        Button:
+            id: tomorrowButton
+            text: 'Tomorrow'
+        Button:
+            id: updateButton
+            text: 'Update'
+
+    BoxLayout:
+        TextInput:
+            size_hint: .1, .1
+            multiline: False
+            input_filter: 'int'
+            hint_text: 'ZIP code'
+
+    Label:
+        size_hint: .25, .25
+        id: currentLabel
+        text: 'Today'
+        font_size: 50
+
+    GridLayout:
+        cols: 2
+        rows: 1
+
+        BoxLayout:
+            orientation: 'vertical'
+
+            Label:
+                id: tempLabel
+                font_size: 40
+            Label:
+                id: phraseLabel
+                font_size: 30
+
+        BoxLayout:
+            orientation: 'vertical'
+
+            Label:
+                id: timeLabel
+                font_size: 50
+            Label:
+                id: dateLabel
+                font_size: 40
+
+
